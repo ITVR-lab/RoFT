@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.ipynb_checkpoints/
+
+# Envs / IDE
+.env
+.env.*
+.venv/
+venv/
+.idea/
+.vscode/
+*.swp
+
+# Model weights & data (download separately)
+checkpoint/
+*.pth
+*.pt
+*.ckpt
+UniMTS_data/
+UniMTS_data.zip
+data/
+raw_datasets/
+feat_cache/
+input_cache/
+third_party/
+config.json
+
+# Experiment outputs
+logs/
+outputs/
+wandb/
+runs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local caches
+.cache/
+mplcfg*/
