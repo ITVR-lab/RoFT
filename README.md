@@ -4,6 +4,21 @@ Official code for **RoFT** — bounded per-joint rotation perturbation during fe
 
 This repository builds on UniMTS (NeurIPS 2024). We keep the backbone / data loaders and add the RoFT training recipe and the 18-dataset few-shot benchmark used in our paper.
 
+## Reproducibility (protocol, data, checkpoints)
+
+| Item | Location |
+|---|---|
+| Full evaluation protocol (splits, seeds, LODO, metrics) | [`docs/PROTOCOL.md`](docs/PROTOCOL.md) |
+| Joint / placement mapping notes (UTD-MHAD, MotionSense) | [`docs/JOINT_MAPPING.md`](docs/JOINT_MAPPING.md) |
+| LODO candidate grid + selection counts | [`protocol/loo_selection_grid.md`](protocol/loo_selection_grid.md) |
+| 18 datasets + few-shot indices | [Hugging Face `xiyuanz/UniMTS`](https://huggingface.co/xiyuanz/UniMTS) · [Google Drive](https://drive.google.com/file/d/1ybD5Fx6c4ykJiDGLPQlLn0m77z9EkjLb/view?usp=sharing) |
+| Pre-trained weights `UniMTS.pth` | same Hugging Face repo → `./checkpoint/UniMTS.pth` |
+| Main RoFT sweep | `scripts/run_roft.sh` / `scripts/run_roft.ps1` |
+| Audit support indices | `python tools/audit_support_overlap.py --data_path ...` |
+| Audit joint mapping | `python tools/audit_joint_mapping.py --data_path ...` |
+| LODO selection | `python tools/loo_select.py ...` |
+| Wilcoxon + Holm | `python tools/stats_wilcoxon.py --bench_dir logs/bench` |
+
 ## Installation
 
 ```bash
